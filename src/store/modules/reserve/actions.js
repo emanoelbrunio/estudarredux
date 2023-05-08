@@ -1,3 +1,4 @@
+//o saga escuta essa
 export function addReserveRequest(id){
     return {
         type: 'ADD_RESERVE_REQUEST',
@@ -5,6 +6,7 @@ export function addReserveRequest(id){
     }
 }
 
+//o saga chama essa
 export function addReserveSuccess(trip){
     return {
         type: 'ADD_RESERVE_SUCCESS',
@@ -26,9 +28,18 @@ export function decrementAmount(trip){
     }
 }
 
-export function incrementAmount(trip){
+
+//o saga escuta essa
+export function incrementAmountRequest(trip){
     return {
-        type: 'INCREMENT_AMOUNT',
+        type: 'INCREMENT_AMOUNT_REQUEST',
+        trip,
+    }
+}
+//o saga chama essa
+export function incrementAmountSuccess(trip){
+    return {
+        type: 'INCREMENT_AMOUNT_SUCCESS',
         trip,
     }
 }

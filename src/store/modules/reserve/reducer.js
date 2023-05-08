@@ -29,10 +29,9 @@ function reserve(state = [], action){
                 }
             })
             
-        case 'INCREMENT_AMOUNT':
+        case 'INCREMENT_AMOUNT_SUCCESS':
             return produce(state, draft => {
                 const tripIndex = draft.findIndex(trip => trip.id === action.trip.id);
-
                 if (tripIndex >= 0){
                     draft[tripIndex].amount += 1;
                 }
